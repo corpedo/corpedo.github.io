@@ -1,92 +1,71 @@
 ---
 import Layout from "@layouts/Default.astro";
-import ButtonMain from "@components/base/ButtonMain.astro";
 import HeroMain from "@components/hero/HeroMain.astro";
 import SectionMuted from "@components/section/SectionMuted.astro";
 import Container from "@components/section/Container.astro";
 import SectionTitle from "@components/section/SectionTitle.astro";
 import IconBlock from "@components/content/IconBlock.astro";
-import Toolbar from "@components/content/doctors/grid/Toolbar.astro";
-import Filters from "@components/content/doctors/grid/Filters.astro";
-import Grid from "@components/content/doctors/grid/Grid.astro";
-import SideStatsRight from "@components/content/features/SideStatsRight.astro";
-import SideStatsLeft from "@components/content/features/SideStatsLeft.astro";
-import Pricing from "@components/content/Pricing.astro";
 import Cta from "@components/content/Cta.astro";
 import Testimonials from "@components/content/Testimonials.astro";
 ---
 
 <Layout>
     <HeroMain />
-
     <SectionMuted>
         <Container>
             <SectionTitle
-                title="Forget about the hassle"
-                subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tibi hoc incredibile, quod beatissimum."
-                minititle="On-Demand Healthcare"
+                title="Last work"
+                subtitle="100% Open-source are our vision."
             />
 
-            <div class="grid md:grid-cols-3 ltablet:grid-cols-4 lg:grid-cols-4 gap-x-6 gap-y-12" x-intersect="activeStep = ''">
-                <!-- Item -->
-                <div>
-                    <IconBlock
-                        title="Ohashi"
-                        text="Simply TCP broker built with C++ and Qt."
-                        icon="ph:timer-duotone"
-                        class="'text-primary-600'"
-                    />
-                </div>
+            <div class="grid md:grid-cols-3 ltablet:grid-cols-4 lg:grid-cols-4 gap-x-6 gap-y-12">
+                <IconBlock
+                    title="Ohashi"
+                    text="Simply TCP broker built with C++ and Qt."
+                    icon="ph:timer-duotone"
+                    class="'text-primary-600'"
+                />
 
-                <!-- Item -->
-                <div>
-                    <IconBlock
-                        title="HippoDb"
-                        text="A distributed read-only database."
-                        icon="ph:first-aid-duotone"
-                        class="'text-rose-500'"
-                    />
-                </div>
+                <IconBlock
+                    title="HippoDb"
+                    text="A distributed read-only database."
+                    icon="ph:first-aid-duotone"
+                    class="'text-rose-500'"
+                />
 
-                <!-- Item -->
-                <div>
-                    <IconBlock
-                        title="HBase RDD"
-                        text="Spark RDD to read, write and delete from HBase"
-                        icon="ph:first-aid-kit-duotone"
-                        class="'text-primary-600'"
-                    />
-                </div>
-                
-                <!-- Item -->
-                <div>
-                    <IconBlock
-                        title="Lethe"
-                        text="Oblivious RAM for Scala"
-                        icon="ph:heartbeat-duotone"
-                        class="'text-rose-500'"
-                    />
-                </div>
+                <IconBlock
+                    title="HBase RDD"
+                    text="Spark RDD to read, write and delete from HBase."
+                    icon="ph:first-aid-kit-duotone"
+                    class="'text-primary-600'"
+                />
+       
+                <IconBlock
+                    title="Lethe"
+                    text="Oblivious RAM for Scala."
+                    icon="ph:heartbeat-duotone"
+                    class="'text-rose-500'"
+                />
             </div>
         </Container>
     </SectionMuted>
 
+    <SectionMuted>
+        <Container>
+            <SectionTitle
+                title="We love Open-source"
+                subtitle="Our meaning and supporting some of big open-source projects."
+                class="'mx-auto text-center'"
+            />
+            <Testimonials />
+        </Container>
+    </SectionMuted>
 
-  <SectionMuted>
-    <Container>
-      <SectionTitle
-        title="They love Dokto"
-        subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tibi hoc incredibile, quod beatissimum."
-        minititle="Our Patients"
-        class="'mx-auto text-center'"
-      />
-      <Testimonials />
-    </Container>
-  </SectionMuted>
-
-  <SectionMuted>
-    <Container>
-      <Cta />
-    </Container>
-  </SectionMuted>
+    <!--
+    <SectionMuted>
+        <Container>
+            <Cta />
+        </Container>
+    </SectionMuted>
+    -->
 </Layout>

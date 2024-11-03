@@ -4,6 +4,7 @@ import Logo from "@components/base/Logo.astro";
 ---
 
 <footer class="font-sans bg-white dark:bg-muted-900">
+    <!--
     <div class="border-t border-muted-200 dark:border-muted-800">
         <Container>
             <div class="px-5 py-8 flex flex-col md:flex-row mx-auto items-center">
@@ -50,19 +51,17 @@ import Logo from "@components/base/Logo.astro";
             </div>
         </Container>
     </div>
+    -->
 
     <div class="bg-muted-100 dark:bg-muted-800">
         <Container>
             <div class="py-4 px-5 flex flex-wrap flex-col sm:flex-row">
                 <p class="text-muted-500 dark:text-muted-400 text-sm text-center sm:text-left">
-                    © 2018-{new Date().getFullYear()} Corpedo. All Rights Reserved.
+                    (c) 2018-{new Date().getFullYear()} Corpedo. All Rights Reserved.
                 </p>
-                <span
-                    class="sm:ml-auto sm:mt-0 mt-2 sm:w-auto w-full sm:text-left text-center text-muted-500 dark:text-muted-400 text-sm"
-                    >Built with <a
-                        href="https://astro.build"
-                        class="hover:text-primary-500">Astro.build</a
-                    >
+                <span class="sm:ml-auto sm:mt-0 mt-2 sm:w-auto w-full sm:text-left text-center text-muted-500 dark:text-muted-400 text-sm">
+                    Built with 
+                    <a href="https://astro.build" class="hover:text-primary-500">Astro.</a>
                 </span>
             </div>
         </Container>
