@@ -1,24 +1,25 @@
 ---
+import { Image } from 'astro:assets';
+
 import Card from "@components/base/Card.astro";
+
+import netbsdLogo from "@assets/supporting/NetBSD.png";
+import almalinuxLogo from "@assets/supporting/AlmaLinux.png";
+import opensuseLogo from "@assets/supporting/OpenSUSE.png";
+import elixirLogo from "@assets/supporting/Elixir.png";
 ---
 
 <div x-cloak class="relative overflow-hidden" x-intersect="activeStep = ''">
     <div x-data="swiper()" class="carousel-container">
         <div class="carousel-controls flex items-center justify-end mb-4">
-            <button
-                class="w-10 h-10 flex items-center justify-center rounded-xl text-muted-600 hover:text-primary-600 dark:text-muted-300 dark:hover:text-muted-100 hover:bg-muted-200 dark:hover:bg-muted-900 transition-colors duration-300"
-                @click="swiper.slidePrev()"
-            >
-                <iconify-icon class="iconify" icon="lucide:arrow-left"
-                ></iconify-icon>
+            <button class="w-10 h-10 flex items-center justify-center rounded-xl text-muted-600 hover:text-primary-600 dark:text-muted-300 dark:hover:text-muted-100 hover:bg-muted-200 dark:hover:bg-muted-900 transition-colors duration-300"
+                @click="swiper.slidePrev()">
+                <iconify-icon class="iconify" icon="lucide:arrow-left"></iconify-icon>
             </button>
 
-            <button
-                class="w-10 h-10 flex items-center justify-center rounded-xl text-muted-600 hover:text-primary-600 dark:text-muted-300 dark:hover:text-muted-100 hover:bg-muted-200 dark:hover:bg-muted-900 transition-colors duration-300"
-                @click="swiper.slideNext()"
-            >
-                <iconify-icon class="iconify" icon="lucide:arrow-right"
-                ></iconify-icon>
+            <button class="w-10 h-10 flex items-center justify-center rounded-xl text-muted-600 hover:text-primary-600 dark:text-muted-300 dark:hover:text-muted-100 hover:bg-muted-200 dark:hover:bg-muted-900 transition-colors duration-300"
+                @click="swiper.slideNext()">
+                <iconify-icon class="iconify" icon="lucide:arrow-right"></iconify-icon>
             </button>
         </div>
         <div class="swiper-container" x-ref="container">
@@ -27,36 +28,20 @@ import Card from "@components/base/Card.astro";
                 <div class="swiper-slide">
                     <Card class="'p-6'">
                         <div class="w-full flex flex-col gap-8 font-sans">
-                            <iconify-icon
-                                class="iconify w-8 h-8 flex items-center justify-center text-3xl text-primary-600 dark:text-rose-500"
-                                icon="fa6-solid:quote-left"></iconify-icon>
+                            <div class="w-full flex items-center gap-3">
+                                <div class="shrink-0 inline-flex relative w-16 h-16">
+                                    <Image src={netbsdLogo} alt="NetBSD logo" class="max-w-full" />
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-sm text-muted-800 dark:text-muted-100">NetBSD</h4>
+                                </div>
+                            </div>
                             <p class="text-muted-500 dark:text-muted-300">
                                 Lorem ipsum dolor sit amet, consectetur
                                 adipiscing elit. Ergo id est convenienter
                                 naturae vivere, a natura discedere. Duo Reges:
                                 constructio interrete.
                             </p>
-                            <div class="w-full flex items-center gap-3">
-                                <div
-                                    class="shrink-0 inline-flex relative w-10 h-10"
-                                >
-                                    <img
-                                        src="https://media.cssninja.io/shuriken/avatars/3.svg"
-                                        class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
-                                        alt="User image"
-                                    />
-                                </div>
-                                <div>
-                                    <h4
-                                        class="font-medium text-sm text-muted-800 dark:text-muted-100"
-                                    >
-                                        NetBSD
-                                    </h4>
-                                    <!--<p class="text-xs text-muted-400">
-                                        Los Angeles, CA
-                                    </p> -->
-                                </div>
-                            </div>
                         </div>
                     </Card>
                 </div>
@@ -64,32 +49,20 @@ import Card from "@components/base/Card.astro";
                 <div class="swiper-slide">
                     <Card class="'p-6'">
                         <div class="w-full flex flex-col gap-8 font-sans">
-                            <iconify-icon
-                                class="iconify w-8 h-8 flex items-center justify-center text-3xl text-primary-600 dark:text-rose-500"
-                                icon="fa6-solid:quote-left"></iconify-icon>
-                            <p class="text-muted-500 dark:text-muted-300">
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. Ergo id est convenienter
-                                naturae vivere, a natura discedere. Duo Reges:
-                                constructio interrete.
-                            </p>
                             <div class="w-full flex items-center gap-3">
-                                <div
-                                    class="shrink-0 inline-flex relative w-10 h-10"
-                                >
-                                    <img
-                                        src="https://media.cssninja.io/shuriken/avatars/2.svg"
-                                        class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
-                                        alt="User image"
-                                    />
+                                <div class="shrink-0 inline-flex relative w-16 h-16">
+                                    <Image src={almalinuxLogo} alt="AlmaLinux logo" class="max-w-full" />
                                 </div>
                                 <div>
                                     <h4 class="font-medium text-sm text-muted-800 dark:text-muted-100">AlmaLinux</h4>
-                                    <!--<p class="text-xs text-muted-400">
-                                        Milano, IT
-                                    </p> -->
                                 </div>
                             </div>
+                            <p class="text-muted-500 dark:text-muted-300">
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Ergo id est convenienter
+                                naturae vivere, a natura discedere. Duo Reges:
+                                constructio interrete.
+                            </p>
                         </div>
                     </Card>
                 </div>
@@ -97,30 +70,20 @@ import Card from "@components/base/Card.astro";
                 <div class="swiper-slide">
                     <Card class="'p-6'">
                         <div class="w-full flex flex-col gap-8 font-sans">
-                            <iconify-icon
-                                class="iconify w-8 h-8 flex items-center justify-center text-3xl text-primary-600 dark:text-rose-500"
-                                icon="fa6-solid:quote-left"></iconify-icon>
-                            <p class="text-muted-500 dark:text-muted-300">
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. Ergo id est convenienter
-                                naturae vivere, a natura discedere. Duo Reges:
-                                constructio interrete.
-                            </p>
                             <div class="w-full flex items-center gap-3">
-                                <div
-                                    class="shrink-0 inline-flex relative w-10 h-10"
-                                >
-                                    <img
-                                        src="https://media.cssninja.io/shuriken/avatars/10.svg"
-                                        class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
-                                        alt="User image"
-                                    />
+                                <div class="shrink-0 inline-flex relative w-16 h-16">
+                                    <Image src={opensuseLogo} alt="OpenSUSE logo" class="max-w-full" />
                                 </div>
                                 <div>
                                     <h4 class="font-medium text-sm text-muted-800 dark:text-muted-10">OpenSUSE</h4>
-                                    </h4>
                                 </div>
                             </div>
+                            <p class="text-muted-500 dark:text-muted-300">
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Ergo id est convenienter
+                                naturae vivere, a natura discedere. Duo Reges:
+                                constructio interrete.
+                            </p>
                         </div>
                     </Card>
                 </div>
@@ -128,62 +91,20 @@ import Card from "@components/base/Card.astro";
                 <div class="swiper-slide">
                     <Card class="'p-6'">
                         <div class="w-full flex flex-col gap-8 font-sans">
-                            <iconify-icon
-                                class="iconify w-8 h-8 flex items-center justify-center text-3xl text-primary-600 dark:text-rose-500"
-                                icon="fa6-solid:quote-left"></iconify-icon>
-                            <p class="text-muted-500 dark:text-muted-300">
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. Ergo id est convenienter
-                                naturae vivere, a natura discedere. Duo Reges:
-                                constructio interrete.
-                            </p>
                             <div class="w-full flex items-center gap-3">
-                                <div
-                                    class="shrink-0 inline-flex relative w-10 h-10"
-                                >
-                                    <img
-                                        src="https://media.cssninja.io/shuriken/avatars/9.svg"
-                                        class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
-                                        alt="User image"
-                                    />
+                                <div class="shrink-0 inline-flex relative w-16 h-16">
+                                    <Image src={elixirLogo} alt="Elixir logo" class="max-w-full" />
                                 </div>
                                 <div>
                                     <h4 class="font-medium text-sm text-muted-800 dark:text-muted-100">Elixir</h4>
                                 </div>
                             </div>
-                        </div>
-                    </Card>
-                </div>
-                <!-- Slides -->
-                <div class="swiper-slide">
-                    <Card class="'p-6'">
-                        <div class="w-full flex flex-col gap-8 font-sans">
-                            <iconify-icon
-                                class="iconify w-8 h-8 flex items-center justify-center text-3xl text-primary-600 dark:text-rose-500"
-                                icon="fa6-solid:quote-left"></iconify-icon>
                             <p class="text-muted-500 dark:text-muted-300">
                                 Lorem ipsum dolor sit amet, consectetur
                                 adipiscing elit. Ergo id est convenienter
                                 naturae vivere, a natura discedere. Duo Reges:
                                 constructio interrete.
                             </p>
-                            <div class="w-full flex items-center gap-3">
-                                <div
-                                    class="shrink-0 inline-flex relative w-10 h-10"
-                                >
-                                    <img
-                                        src="https://media.cssninja.io/shuriken/avatars/11.svg"
-                                        class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
-                                        alt="User image"
-                                    />
-                                </div>
-                                <div>
-                                    <h4 class="font-medium text-sm text-muted-800 dark:text-muted-100">FastAPI</h4>
-                                    <p class="text-xs text-muted-400">
-                                        London, UK
-                                    </p>
-                                </div>
-                            </div>
                         </div>
                     </Card>
                 </div>
