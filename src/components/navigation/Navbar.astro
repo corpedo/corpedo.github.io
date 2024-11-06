@@ -4,9 +4,14 @@ import Hamburger from "@components/base/Hamburger.astro";
 import ThemeToggler from "@components/base/ThemeToggler.astro";
 ---
 
-<div x-cloak x-data="navbar()" x-on:scroll.window="scroll()" class="fixed top-0 left-0 w-full z-50 transition-all duration-300"
-    :class="scrolled || $store.app.mobileOpen ? 'bg-white dark:bg-muted-900 shadow-lg shadow-muted-300/30 dark:shadow-muted-900/40' : ''">
-    
+<header class="w-full max-w-7xl mx-auto border-2 border-black text-center">
+
+            <Logo />
+
+</header>
+
+<!--
+<div x-cloak x-data="navbar()" x-on:scroll.window="scroll()" class="fixed top-0 left-0 w-full z-50 transition-all duration-300" :class="scrolled || $store.app.mobileOpen ? 'bg-white dark:bg-muted-900 shadow-lg shadow-muted-300/30 dark:shadow-muted-900/40' : ''">
     <div class="w-full max-w-7xl mx-auto flex items-center justify-between pl-4 pr-0 lg:pr-4 font-sans">
         <div class="w-full lg:w-auto flex items-center gap-6">
             <a href="/" class="flex items-center gap-3">
@@ -44,3 +49,4 @@ import ThemeToggler from "@components/base/ThemeToggler.astro";
     </div>
   </div>
 </div>
+-->
