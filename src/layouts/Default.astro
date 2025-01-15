@@ -1,14 +1,17 @@
 ---
 import { ViewTransitions } from "astro:transitions";
 
-import Logo from "@components/base/Logo.astro";
-import ThemeToggler from "@components/base/ThemeToggler.astro";
-import Footer from "@components/section/Footer.astro";
+import ThemeToggler from "@components/ThemeToggler.astro";
+import Footer from "@components/Footer.astro";
 
 import "@fontsource-variable/inter";
 import "swiper/swiper-bundle.css";
 
 import "../styles/main.css";
+
+import { Image } from "astro:assets";
+
+import logoImg from '@assets/corpedo.svg';
 ---
 
 <!doctype html>
@@ -26,7 +29,7 @@ import "../styles/main.css";
     <body class="bg-muted-100 dark:bg-muted-1000 " x-data="homeSpy()">
         <div class="flex items-center justify-center gap-5">
             <div class="flex-none">
-                <Logo />
+                <Image src={logoImg} alt="Corpedo logo" class="block mx-auto mt-2 w-52" />
             </div>
             <div class="flex-none">
                 <ThemeToggler />
