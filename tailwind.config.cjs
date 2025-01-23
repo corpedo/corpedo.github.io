@@ -3,9 +3,14 @@
 const colors = require("tailwindcss/colors");
 const plugin = require("tailwindcss/plugin");
 
+const flowbite = require('flowbite/plugin');
+
 module.exports = {
   darkMode: "class",
-  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+  content: [
+    "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
+    './node_modules/flowbite/**/*.js'
+  ],
   theme: {
     extend: {
       screens: {
@@ -55,6 +60,7 @@ module.exports = {
     },
   },
   plugins: [
+    flowbite,
     require("@tailwindcss/typography"),
     require("@tailwindcss/aspect-ratio"),
 		//Additional utilities

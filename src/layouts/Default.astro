@@ -1,45 +1,41 @@
 ---
-import { ViewTransitions } from "astro:transitions";
-
 import ThemeToggler from "@components/ThemeToggler.astro";
 import Footer from "@components/Footer.astro";
-
-import "@fontsource-variable/inter";
-import "swiper/swiper-bundle.css";
-
-import "../styles/main.css";
 
 import { Image } from "astro:assets";
 
 import logoImg from '@assets/corpedo.svg';
 ---
-
-<!doctype html>
-<html lang="en" x-data="theme()" :class="$store.app.isDark ? 'dark' : ''">
+<html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <meta name="generator" content={Astro.generator} />
 
         <title>Corpedo</title>
 
-        <ViewTransitions />
+        <script>
+            // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+            if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark')
+            }
+        </script>
     </head>
-    <body class="bg-muted-100 dark:bg-muted-1000 " x-data="homeSpy()">
-        <div class="flex items-center justify-center gap-5">
+    <body class="bg-muted-100 dark:bg-muted-1000 ">
+        <header class="flex items-center justify-center gap-5">
             <div class="flex-none">
                 <Image src={logoImg} alt="Corpedo logo" class="block mx-auto mt-2 w-52" />
             </div>
             <div class="flex-none">
                 <ThemeToggler />
             </div>
-        </div>
-        
-        <slot />
-
+        </header>
+        <main>
+            <slot />
+        </main>
+       
         <Footer />
-
-        <script src="../js/main"></script>
     </body>
 </html>
